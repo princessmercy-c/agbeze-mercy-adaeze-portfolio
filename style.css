@@ -1,3 +1,4 @@
+/* --- GLOBAL VARIABLES --- */
 :root {
     --bg-dark: #0b0915;
     --card-bg: #161229;
@@ -6,7 +7,12 @@
     --text-gray: #a0a0a0;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* --- RESET & BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background-color: var(--bg-dark);
@@ -16,50 +22,85 @@ body {
     overflow-x: hidden;
 }
 
-/* Nav */
+/* --- NAVIGATION --- */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 10%;
+    padding: 1.5rem 5%;
     align-items: center;
 }
 
-.logo { font-weight: 800; font-size: 1.5rem; color: var(--text-white); }
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--text-white);
+}
 
 .hire-btn {
     background: var(--accent-yellow);
-    color: black;
-    padding: 10px 25px;
+    color: #000;
+    padding: 10px 20px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
-/* Hero */
+/* --- HERO SECTION --- */
 .hero {
     display: flex;
-    padding: 5rem 10%;
+    flex-direction: column; /* Default for mobile */
+    padding: 3rem 5%;
     align-items: center;
+    text-align: center;
     gap: 2rem;
-    min-height: 80vh;
 }
 
-.hero-content { flex: 2; }
-.hero-image { flex: 1; text-align: right; }
+.hero-content {
+    flex: 1;
+}
+
+.subtitle {
+    color: var(--accent-yellow);
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
+.highlight {
+    color: var(--accent-yellow);
+}
+
+.description {
+    color: var(--text-gray);
+    font-size: 1rem;
+    margin: 20px 0 30px;
+}
+
+.hero-image {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .hero-image img {
-    width: 300px;
-    height: 300px;
-    border-radius: 20px;
+    width: 250px; /* Controlled size for mobile */
+    height: 250px;
+    border-radius: 50%; /* Circular look for profile */
     object-fit: cover;
-    border: 2px solid var(--accent-yellow);
+    border: 3px solid var(--accent-yellow);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.subtitle { color: var(--accent-yellow); letter-spacing: 2px; font-size: 0.8rem; font-weight: 600; }
-h1 { font-size: 3.5rem; line-height: 1.1; margin: 10px 0; }
-.highlight { color: var(--accent-yellow); }
-.description { color: var(--text-gray); font-size: 1.1rem; margin: 20px 0 40px; }
-
-/* Buttons */
+/* --- BUTTONS --- */
 .cv-btn {
     display: inline-flex;
     align-items: center;
@@ -73,45 +114,125 @@ h1 { font-size: 3.5rem; line-height: 1.1; margin: 10px 0; }
     transition: 0.3s;
 }
 
-.cv-btn:hover { background: var(--accent-yellow); color: var(--bg-dark); }
+.cv-btn:hover {
+    background: var(--accent-yellow);
+    color: var(--bg-dark);
+}
 
-/* Grid Sections */
-.services, .work-samples { padding: 5rem 10%; }
-.section-title { font-size: 2rem; margin-bottom: 3rem; border-left: 4px solid var(--accent-yellow); padding-left: 15px; }
+/* --- SECTIONS --- */
+.services, .work-samples {
+    padding: 4rem 5%;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent-yellow);
+    padding-left: 15px;
+}
 
 .card-container, .sample-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 1.5rem;
 }
 
 .service-card, .sample-card {
     background: var(--card-bg);
-    padding: 2.5rem;
+    padding: 1.5rem;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.tag { background: rgba(255, 204, 0, 0.1); color: var(--accent-yellow); padding: 4px 10px; border-radius: 5px; font-size: 0.7rem; }
+.service-card h3, .sample-card h3 {
+    margin: 10px 0;
+    color: var(--accent-yellow);
+}
 
-/* Mockups */
-.visual-mockup { margin-top: 1.5rem; padding: 1rem; border-radius: 10px; font-size: 0.85rem; }
-.slack-bg { background: #4a154b; color: white; }
-.email-bg { background: white; color: #333; }
-.ai-bg { background: linear-gradient(135deg, #6e45e2, #88d3ce); color: white; }
+.tag {
+    background: rgba(255, 204, 0, 0.1);
+    color: var(--accent-yellow);
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
 
-/* Stat Card */
-.stat-card { background: #1a162d; margin: 0 10%; padding: 3rem; border-radius: 20px; text-align: center; }
-.bar-container { background: #2a2445; height: 8px; border-radius: 4px; margin: 15px auto; width: 50%; }
-.bar { background: var(--accent-yellow); height: 100%; border-radius: 4px; }
+/* --- SCREENSHOT FIXES (The "Too Big" Problem) --- */
+.real-screenshot {
+    margin-top: 15px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 204, 0, 0.2);
+}
 
-/* Footer */
-footer { text-align: center; padding: 5rem 0; background: #07050d; }
-.footer-link { color: var(--accent-yellow); text-decoration: none; font-size: 1.5rem; font-weight: bold; }
-.social-tags { margin-top: 20px; color: var(--accent-yellow); font-family: monospace; }
+.real-screenshot img {
+    width: 100%; /* Forces giant phone screenshots to stay inside the box */
+    height: auto;
+    display: block;
+}
 
-@media (max-width: 768px) {
-    .hero { flex-direction: column; text-align: center; }
-    .hero-image { order: -1; }
-    h1 { font-size: 2.5rem; }
+/* --- IMPACT SECTION --- */
+.impact {
+    padding: 2rem 5%;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.bar-container {
+    background: #2a2445;
+    height: 8px;
+    border-radius: 4px;
+    margin: 15px auto;
+    width: 80%;
+}
+
+.bar {
+    background: var(--accent-yellow);
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 4rem 5%;
+    background: #07050d;
+}
+
+.footer-link {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.social-tags {
+    margin-top: 20px;
+    color: var(--text-gray);
+    font-family: monospace;
+}
+
+/* --- DESKTOP ADJUSTMENTS --- */
+@media (min-width: 992px) {
+    nav { padding: 2rem 10%; }
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        padding: 5rem 10%;
+    }
+    .hero-image { justify-content: flex-end; }
+    .hero-image img { width: 350px; height: 350px; }
+    h1 { font-size: 4rem; }
+    .card-container, .sample-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .services, .work-samples { padding: 5rem 10%; }
 }

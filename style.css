@@ -23,19 +23,19 @@ h1 { font-size: 2.6rem; line-height: 1.2; }
 .highlight { color: var(--accent-yellow); }
 .cv-btn { display: inline-block; margin-top: 20px; border: 2px solid var(--accent-yellow); color: var(--accent-yellow); padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; }
 
-/* Sections */
+/* Sections & 5-Grid Layout */
 section { padding: 4rem 5%; }
 .section-title { font-size: 1.8rem; margin-bottom: 2.5rem; border-left: 4px solid var(--accent-yellow); padding-left: 15px; }
-.card-container, .sample-grid, .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-.service-card, .sample-card, .testimonial-card { background: var(--card-bg); padding: 2rem; border-radius: 20px; transition: 0.3s; }
+.card-container, .sample-grid, .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.service-card, .sample-card, .testimonial-card { background: var(--card-bg); padding: 1.5rem; border-radius: 20px; transition: 0.3s; }
 
-/* Projects / Screenshots */
-.real-screenshot { margin-top: 15px; overflow: hidden; border-radius: 10px; border: 1px solid rgba(255, 204, 0, 0.1); }
-.real-screenshot img { width: 100%; height: auto; display: block; }
+/* Screenshots */
+.real-screenshot { margin-top: 15px; border-radius: 10px; overflow: hidden; background: #000; }
+.real-screenshot img { width: 100%; height: auto; display: block; object-fit: contain; }
 
 /* Tech Slider */
 .slider-container { width: 100%; overflow: hidden; padding: 40px 0; background: rgba(22, 18, 41, 0.5); border-radius: 20px; }
-.slider-track { display: flex; width: calc(180px * 12); animation: scroll 30s linear infinite; }
+.slider-track { display: flex; width: calc(180px * 12); animation: scroll 25s linear infinite; }
 .slider-track img { width: 60px; height: 60px; margin: 0 45px; object-fit: contain; }
 
 @keyframes scroll {
@@ -45,16 +45,15 @@ section { padding: 4rem 5%; }
 
 /* Testimonials */
 .testimonial-card { border-left: 5px solid var(--accent-yellow); }
-.quote { font-style: italic; margin-bottom: 1.5rem; font-size: 1rem; }
-.client-info strong { color: var(--accent-yellow); display: block; font-size: 1.1rem; }
+.quote { font-style: italic; margin-bottom: 1rem; font-size: 0.95rem; }
 
-/* Responsive Desktop */
+/* Desktop */
 @media (min-width: 992px) {
     .hero { flex-direction: row; text-align: left; padding: 5rem 10%; }
     .hero-image { flex: 1; display: flex; justify-content: flex-end; }
     .hero-image img { width: 350px; height: 350px; }
 }
 
-footer { text-align: center; padding: 4rem 5%; }
+footer { text-align: center; padding: 4rem 5%; border-top: 1px solid rgba(255, 255, 255, 0.05); }
 .footer-link { color: var(--accent-yellow); text-decoration: none; font-size: 1.2rem; }
 .social-tags { margin-top: 20px; color: var(--text-gray); }

@@ -64,45 +64,23 @@ footer { text-align: center; padding: 5rem 5%; border-top: 1px solid rgba(255, 2
 .footer-link { color: var(--accent-yellow); text-decoration: none; font-size: 1.3rem; font-weight: bold; }
 .social-tags { margin-top: 25px; color: var(--text-gray); font-weight: 600; letter-spacing: 1px; }
 
-/* Graphics Showcase Styles */
-.graphics-showcase { background: rgba(22, 18, 41, 0.3); }
 
 .graphics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.graphics-card {
-    background: var(--card-bg);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.graphics-card:hover {
-    transform: translateY(-10px);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 .graphics-card img {
     width: 100%;
-    height: 350px;
+    height: 300px; /* Adjusted height to fit more on screen */
     object-fit: cover;
-}
-
-.graphics-info {
-    padding: 1.5rem;
 }
 
 .graphics-info h3 {
     color: var(--accent-yellow);
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
 }
 
-.graphics-info p {
-    color: var(--text-gray);
-    font-size: 0.9rem;
-    line-height: 1.5;
 }

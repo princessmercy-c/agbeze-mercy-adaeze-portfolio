@@ -23,21 +23,24 @@ h1 { font-size: 2.6rem; line-height: 1.2; }
 .highlight { color: var(--accent-yellow); }
 .cv-btn { display: inline-block; margin-top: 20px; border: 2px solid var(--accent-yellow); color: var(--accent-yellow); padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; }
 
-/* Sections & Cards */
+/* Sections */
 section { padding: 4rem 5%; }
 .section-title { font-size: 1.8rem; margin-bottom: 2.5rem; border-left: 4px solid var(--accent-yellow); padding-left: 15px; }
 .card-container, .sample-grid, .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 .service-card, .sample-card, .testimonial-card { background: var(--card-bg); padding: 2rem; border-radius: 20px; transition: 0.3s; }
-.real-screenshot img { width: 100%; border-radius: 10px; margin-top: 15px; }
+
+/* Projects / Screenshots */
+.real-screenshot { margin-top: 15px; overflow: hidden; border-radius: 10px; border: 1px solid rgba(255, 204, 0, 0.1); }
+.real-screenshot img { width: 100%; height: auto; display: block; }
 
 /* Tech Slider */
 .slider-container { width: 100%; overflow: hidden; padding: 40px 0; background: rgba(22, 18, 41, 0.5); border-radius: 20px; }
-.slider-track { display: flex; width: calc(160px * 16); animation: scroll 35s linear infinite; }
-.slider-track img { width: 55px; height: 55px; margin: 0 45px; filter: grayscale(100%); opacity: 0.5; object-fit: contain; }
+.slider-track { display: flex; width: calc(180px * 12); animation: scroll 30s linear infinite; }
+.slider-track img { width: 60px; height: 60px; margin: 0 45px; object-fit: contain; }
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-160px * 8)); }
+    100% { transform: translateX(calc(-180px * 6)); }
 }
 
 /* Testimonials */
@@ -45,14 +48,13 @@ section { padding: 4rem 5%; }
 .quote { font-style: italic; margin-bottom: 1.5rem; font-size: 1rem; }
 .client-info strong { color: var(--accent-yellow); display: block; font-size: 1.1rem; }
 
-/* Desktop */
+/* Responsive Desktop */
 @media (min-width: 992px) {
     .hero { flex-direction: row; text-align: left; padding: 5rem 10%; }
     .hero-image { flex: 1; display: flex; justify-content: flex-end; }
-    .hero-content { flex: 1; }
     .hero-image img { width: 350px; height: 350px; }
 }
 
 footer { text-align: center; padding: 4rem 5%; }
-.footer-link { color: var(--accent-yellow); text-decoration: none; font-size: 1.2rem; font-weight: bold; }
+.footer-link { color: var(--accent-yellow); text-decoration: none; font-size: 1.2rem; }
 .social-tags { margin-top: 20px; color: var(--text-gray); }
